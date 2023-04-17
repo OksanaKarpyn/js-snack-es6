@@ -1,51 +1,102 @@
-let arrayOggetti = [
-    {
-        nome: ' prima bici',
-        peso: 10
-    }, {
-        nome: 'seconda bici ',
-        peso: 15
-    }, {
-        nome: 'terza bici ',
-        peso: 20
+let arrayOggetti = [{
+    nome: 'prima bici',
+    peso: 30
+}, {
+    nome: 'seconda bici ',
+    peso: 15
+}, {
+    nome: 'terza bici ',
+    peso: 20
+}]
+let item =document.querySelector('.item')
+let minimo = arrayOggetti[0];
+arrayOggetti.forEach((element) => {
+ 
+    if (element.peso < minimo.peso){
+        minimo=element;
     }
-]
-let item = document.querySelector('.item');
-let pesoMinimo = arrayOggetti[0].peso;
-for (let i = 0; i < arrayOggetti.length; i++) {
-    let {peso, nome} = arrayOggetti[i];
-    // console.log(peso,nome)
-    if (pesoMinimo == arrayOggetti[i].peso) {
-        item.innerHTML += `<div class="">${peso}${nome}</div>`
-        // console.log(pesoMinimo)
-    }
-}
+  
+
+
+})
+const {nome,peso}=minimo;
+console.log(nome,peso)
+item.innerHTML+=` la ${nome} ha il peso ${peso}`
+
+console.log(minimo.peso,minimo.nome)
+
+// const sorted = arrayOggetti.sort((a, b) => {
+//     if (a.peso > b.peso) {
+//         return 1;
+
+//     }
+//     if(a.peso < b.peso){
+//         return -1;
+//     }
+
+//     return 0;
+// })
+// let { nome,peso}=sorted[0]
+
+// console.log(nome,peso)
+
+
+
 
 // -----------2esercizio----------
-let random = Math.floor(Math.random() * 10) + 1;
-let arraySquadre = [
-    {
-        nome: 'prima squadra',
-        punti: random,
-        perdite: random
-    }, {
-        nome: 'seconda squadra',
-        punti: random,
-        perdite: random
+// let random = Math.floor(Math.random() * 10) + 1;
+let arraySquadre = [{
+    nome: 'prima squadra',
+    punti: 0,
+    perdite: 0
+}, {
+    nome: 'seconda squadra',
+    punti: 0,
+    perdite: 0
 
-    }, {
-        nome: 'terza squadra',
-        punti: random,
-        perdite: random
+}, {
+    nome: 'terza squadra',
+    punti:0,
+    perdite: 0
 
-    }
-]
-let arrNew = []
-for (let i = 0; i < arraySquadre.length; i++) {
-    let {punti, perdite} = arraySquadre[i]
-    
-    arrNew.push(punti, perdite)
-    console.log(arrNew)
+}]
+const squadrePerdite =[];
+arraySquadre.forEach((element,i)=>{
+    element.punti= Math.floor(Math.random() * 10) + 1;
+    element.perdite= Math.floor(Math.random() * 5) + 1;
+    let {nome,perdite}=element
+    squadrePerdite.push({nome,perdite})
+});
 
-    // console.log(nome, punti, perdite)
-}
+console.log(squadrePerdite)
+// console.log(arraySquadre);
+// // let squadrePerdite=[];
+// // arraySquadre.forEach(element=>{
+// //     squadrePerdite.push({nome:element.nome,perdite:element.perdite})
+// // })
+// const squadrePerdite=arraySquadre.map(element=>{
+//     return {nome:element.nome,perdite:element.perdite};
+// })
+
+// console.log(squadrePerdite)
+
+
+
+
+
+
+
+
+
+
+
+// ----------esercizio 3-------
+let arrCitta = [
+    'milano',
+    'roma',
+    'verona',
+    'torino',
+    'firenze',
+    'trieste'
+];
+
